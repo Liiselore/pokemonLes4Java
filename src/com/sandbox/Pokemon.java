@@ -14,6 +14,8 @@ public abstract class Pokemon {
         this.canEvolve = canEvolve;
     }
 
+    public abstract void printStats();
+
     public abstract void eat();
 
     public abstract void levelUp();

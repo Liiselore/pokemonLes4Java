@@ -12,15 +12,10 @@ public class Main {
         FirePokemon charmander = new FirePokemon("Charmander", 4, 10, true, true, false, false);
         FirePokemon charmeleon = new FirePokemon("Charmeleon", 5, 16, true, true, true, false);
         FirePokemon charizard = new FirePokemon("Charizard", 6, 36, false, true, true, true);
-        WaterPokemon squirtle = new WaterPokemon("Squirtle", 7, 10, true, true, false, false );
+        WaterPokemon squirtle = new WaterPokemon("Squirtle", 7, 10, true, true, false, false);
         WaterPokemon wartortle = new WaterPokemon("Wartortle", 8, 16, true, true, true, false);
         WaterPokemon blastoise = new WaterPokemon("Blastoise", 9, 36, false, true, true, true);
         ElectricPokemon pikachu = new ElectricPokemon("Pikachu", 25, 16, false, true, true, false);
-
-        bulbasaur.setLevel(36);
-        bulbasaur.levelUp();
-        bulbasaur.eat();
-
 
         System.out.println("Hello there!");
         System.out.println("Welcome to the world of POKéMON!");
@@ -52,20 +47,23 @@ public class Main {
         System.out.println("They are inside the POKé BALLs!");
         System.out.println("When I was young, I was a serious POKéMON trainer!");
         System.out.println("In my old age, I have only 3 left, but you can have one! Choose!");
+        System.out.println("And " + rivalName + ", you can have one too!");
+        System.out.println("You can choose between these POKéMON:");
+        System.out.println("For " + squirtle.getName() + " press 's' + enter, for " + bulbasaur.getName() + " press 'b' + enter, for " + charmander.getName() + " press 'c' + enter");
 
+        String chosenPokemon = input.nextLine();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        if (chosenPokemon.equalsIgnoreCase("s")) {
+            System.out.println("You chose " + squirtle.getName() + "!");
+            squirtle.printStats();
+        } else if (chosenPokemon.equalsIgnoreCase("b")) {
+            System.out.println("You chose " + bulbasaur.getName() + "!");
+            bulbasaur.printStats();
+        } else if (chosenPokemon.equalsIgnoreCase("c")) {
+            System.out.println("You chose " + charmander.getName() + "!");
+            charmander.printStats();
+        } else {
+            System.out.println("This was not an option..");
+        }
     }
 }

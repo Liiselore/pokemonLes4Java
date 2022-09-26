@@ -14,6 +14,17 @@ public class ElectricPokemon extends Pokemon{
 
 
     @Override
+    public void printStats() {
+        System.out.println("The name of your water Pokémon is " + getName());
+        System.out.println("It is currently on level " + getLevel());
+        System.out.println("The indexnumber of the Pokémon is " + getIndexNumber());
+        System.out.println("It knows the following attacks:" +
+                " Thunderwave: " + knowsThunderWave +
+                ". Electroball: " + knowsElectroBall +
+                ". Spark: " + knowsSpark);
+    }
+
+    @Override
     public void eat() {
         System.out.println("Your electric pokemon ate a Passho Berry and takes only half damage from a Water-type move!");
     }

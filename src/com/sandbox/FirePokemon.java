@@ -37,6 +37,17 @@ public class FirePokemon extends Pokemon{
     }
 
     @Override
+    public void printStats() {
+        System.out.println("The name of your water Pokémon is " + getName());
+        System.out.println("It is currently on level " + getLevel());
+        System.out.println("The indexnumber of the Pokémon is " + getIndexNumber());
+        System.out.println("It knows the following attacks: " +
+                " Ember: " + knowsEmber +
+                ". Fire fang: " + knowsFireFang +
+                ". Flamethrower: " + knowsFlamethrower);
+    }
+
+    @Override
     public void eat() {
         System.out.println("Your fire pokemon ate a Rindo Berry and takes only half damage from a Grass-type move!");
     }
