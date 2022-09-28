@@ -108,5 +108,8 @@ public class Main {
 
         System.out.println("Your POKéDEX has been updated.");
         pikachu.printStats();
+        System.out.println("If a wild POKéMON appears, your POKéMON can fight against it!");
+        System.out.println("Afterward, go on to the next town.");
+        System.out.println("Good luck!");
     }
 }
