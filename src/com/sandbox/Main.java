@@ -1,21 +1,36 @@
 package com.sandbox;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        GrassPokemon bulbasaur = new GrassPokemon("Bulbasaur", 1, 10, true, true, true, false);
-        GrassPokemon ivysar = new GrassPokemon("Ivysar", 2, 16, true, true, true, true);
-        GrassPokemon venusar = new GrassPokemon("Venusar", 3, 36, false, true, true, true);
-        FirePokemon charmander = new FirePokemon("Charmander", 4, 10, true, true, false, false);
-        FirePokemon charmeleon = new FirePokemon("Charmeleon", 5, 16, true, true, true, false);
-        FirePokemon charizard = new FirePokemon("Charizard", 6, 36, false, true, true, true);
-        WaterPokemon squirtle = new WaterPokemon("Squirtle", 7, 10, true, true, false, false);
-        WaterPokemon wartortle = new WaterPokemon("Wartortle", 8, 16, true, true, true, false);
-        WaterPokemon blastoise = new WaterPokemon("Blastoise", 9, 36, false, true, true, true);
-        ElectricPokemon pikachu = new ElectricPokemon("Pikachu", 25, 16, false, true, true, false);
+        Pokemon bulbasaur = new GrassPokemon("Bulbasaur", 1, 10, true, true, true, false);
+        Pokemon ivysar = new GrassPokemon("Ivysar", 2, 16, true, true, true, true);
+        Pokemon venusar = new GrassPokemon("Venusar", 3, 36, false, true, true, true);
+        Pokemon charmander = new FirePokemon("Charmander", 4, 10, true, true, false, false);
+        Pokemon charmeleon = new FirePokemon("Charmeleon", 5, 16, true, true, true, false);
+        Pokemon charizard = new FirePokemon("Charizard", 6, 36, false, true, true, true);
+        Pokemon squirtle = new WaterPokemon("Squirtle", 7, 10, true, true, false, false);
+        Pokemon wartortle = new WaterPokemon("Wartortle", 8, 16, true, true, true, false);
+        Pokemon blastoise = new WaterPokemon("Blastoise", 9, 36, false, true, true, true);
+        Pokemon pikachu = new ElectricPokemon("Pikachu", 25, 16, false, true, true, false);
+
+        List<Pokemon> allPokemon = new ArrayList<>();
+        allPokemon.add(bulbasaur);
+        allPokemon.add(ivysar);
+        allPokemon.add(venusar);
+        allPokemon.add(charmeleon);
+        allPokemon.add(charmander);
+        allPokemon.add(charizard);
+        allPokemon.add(squirtle);
+        allPokemon.add(wartortle);
+        allPokemon.add(blastoise);
+        allPokemon.add(pikachu);
 
         System.out.println("Hello there!");
         System.out.println("Welcome to the world of POKéMON!");
@@ -40,7 +55,7 @@ public class Main {
         System.out.println(yourName + "!");
         System.out.println("Your very own POKéMON legend is about to unfold!");
         System.out.println("A world of dreams and adventures with POKéMON awaits! Let's go!");
-        System.out.println("Later in the professor Oak...");
+        System.out.println(".......");
         System.out.println("Here " + yourName + "!");
         System.out.println("There are 3 POKéMON here!");
         System.out.println("HAHA!");
@@ -49,21 +64,49 @@ public class Main {
         System.out.println("In my old age, I have only 3 left, but you can have one! Choose!");
         System.out.println("And " + rivalName + ", you can have one too!");
         System.out.println("You can choose between these POKéMON:");
-        System.out.println("For " + squirtle.getName() + " press 's' + enter, for " + bulbasaur.getName() + " press 'b' + enter, for " + charmander.getName() + " press 'c' + enter");
+        System.out.println("For " + squirtle.getName().toUpperCase() + " press 's' + enter, " +
+                "for " + bulbasaur.getName().toUpperCase() + " press 'b' + enter, " +
+                "for " + charmander.getName().toUpperCase() + " press 'c' + enter");
 
         String chosenPokemon = input.nextLine();
 
         if (chosenPokemon.equalsIgnoreCase("s")) {
-            System.out.println("You chose " + squirtle.getName() + "!");
+            System.out.println(yourName + " received " + squirtle.getName().toUpperCase() + "!");
+            System.out.println("Your POKéDEX has been updated.");
             squirtle.printStats();
         } else if (chosenPokemon.equalsIgnoreCase("b")) {
-            System.out.println("You chose " + bulbasaur.getName() + "!");
+            System.out.println(yourName + " reveived " + bulbasaur.getName().toUpperCase() + "!");
+            System.out.println("Your POKéDEX has been updated.");
             bulbasaur.printStats();
         } else if (chosenPokemon.equalsIgnoreCase("c")) {
-            System.out.println("You chose " + charmander.getName() + "!");
+            System.out.println(yourName + " received " + charmander.getName().toUpperCase() + "!");
+            System.out.println("Your POKéDEX has been updated.");
             charmander.printStats();
         } else {
             System.out.println("This was not an option..");
         }
+
+        System.out.println(".....");
+        System.out.println("I have an other surprise for you " + yourName + "!");
+        System.out.println(yourName + ", this is the POKéMON I caught earlier.");
+        System.out.println("You can have it. I caught it in the wild and it's not tame yet.");
+        System.out.println(yourName + " received a " + pikachu.getName().toUpperCase() + "!");
+        System.out.println("Do you want to give a nickname to " + pikachu.getName().toUpperCase() + "? y/n");
+
+        String wantsToNicknamePokemon = input.nextLine();
+
+        if (wantsToNicknamePokemon.equalsIgnoreCase("y")) {
+            System.out.println("Nickname:");
+            String nicknamePikachu = input.nextLine();
+            pikachu.setNickname(nicknamePikachu);
+            System.out.println(pikachu.getName().toUpperCase() + " has given the nickname " + pikachu.getNickname() + "!");
+        } else if (wantsToNicknamePokemon.equalsIgnoreCase("n")) {
+            System.out.println(pikachu.getName().toUpperCase() + " has no nickname!");
+        } else {
+            System.out.println("That was not an option..");
+        }
+
+        System.out.println("Your POKéDEX has been updated.");
+        pikachu.printStats();
     }
 }

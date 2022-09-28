@@ -39,7 +39,7 @@ public class GrassPokemon extends Pokemon {
 
     @Override
     public void printStats() {
-        System.out.println("The name of your water Pokémon is " + getName());
+        System.out.println("The name of your grass Pokémon is " + getName());
         System.out.println("It is currently on level " + getLevel());
         System.out.println("The indexnumber of the Pokémon is " + getIndexNumber());
         System.out.println("It knows the following attacks: " +
